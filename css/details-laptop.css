@@ -1,0 +1,47 @@
+.details-laptop {
+    margin-bottom: 30px;
+    padding-top: 10px;
+    display: flex;
+}
+
+.details-laptop .foto-laptop img {
+    border-radius: 20px;
+    
+}
+
+.details-laptop .info-laptop {
+    margin-left: 10px;
+    box-shadow: var(--box-shadow-1);
+    background: var(--background-1);
+    padding-left: 10px;
+    padding-right: 8px;
+    border-radius: 10px;
+    color: var(--color-dark);
+}
+
+.details-laptop .foto-laptop {
+    border-radius: 20px;
+    box-shadow: var(--box-shadow-2);
+}
+
+.insights .laptop {
+    padding-left: 50px;
+    margin-left: 35px;
+}
+
+.btn-back {
+    color: var(--color-dark);
+}
+
+.btn-back a {
+    display: flex;
+    
+}
+
+.btn-back a span {
+    width: 20px;
+}
+
+.date {
+    display: flex;
+}

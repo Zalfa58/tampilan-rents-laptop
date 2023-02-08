@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Quicksand:wght@500&display=swap');
 
+
+
 /* Root Variables */
 :root {
     --color-primary: #7380ec;
@@ -14,6 +16,10 @@
     --color-primary-variant: #111e88;
     --color-dark-variant: #677483;
     --color-background: #e4dede;
+    --color-text-muted: #b8bec5;
+    --background-1:linear-gradient(228deg, #6b76da 16%, hwb(288 45% 9%) 69%, #6b76da 100%);
+    --background-2: linear-gradient(49deg, #9fa2b8 16%, #7380ec 49%, #9fa2b8 96%);
+    
 
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
@@ -22,17 +28,24 @@
 
     --card-padding: 1.8rem;
     --padding-1: 1.2rem;
-
+    
     --box-shadow: 0 2rem 3rem var(--color-info-light);
+    --box-shadow-1: rgba(134, 170, 190, 0.4) 0px 5px, rgba(134, 170, 190, 0.3) 0px 10px, rgba(134, 170, 190, 0.2) 0px 15px, rgba(134, 170, 190, 0.1) 0px 20px, rgba(134, 170, 190, 0.05) 0px 25px;
+    --box-shadow-2: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    
 }
 
 .dark-theme-variables {
+    --background-1: linear-gradient(228deg, rgba(2,0,36,1) 16%, rgba(109,45,124,1) 69%, rgba(255,175,0,1) 100%);
+    --background-2: linear-gradient(49deg, rgba(2,0,36,1) 16%, rgba(45,49,124,1) 49%, rgba(255,205,0,1) 96%);
     --color-background: #181a1e;
     --color-white: #202528;
     --color-dark: #edeffd;
     --color-dark-variant: #a3bdcc;
     --color-light: rgba(0, 0, 0, 0.4);
     --box-shadow: 0 2rem 3rem var(--color-light);
+    --box-shadow-1:  rgba(114, 46, 240, 0.4) 0px 5px, rgba(114, 46, 240, 0.3) 0px 10px, rgba(114, 46, 240, 0.2) 0px 15px, rgba(114, 46, 240, 0.1) 0px 20px, rgba(114, 46, 240, 0.05) 0px 25px;
+    --box-shadow-2: rgba(255, 255, 255, 0.16) 0px 1px 4px, rgb(255, 255, 255) 0px 0px 0px 3px;
 }
 
 * {
@@ -148,6 +161,7 @@ aside .top {
     align-items: center;
     justify-content: space-between;
     margin-top: 1.4rem;
+    border-radius: 10px;
 }
 
 aside .logo {
@@ -166,12 +180,13 @@ aside .close {
 
 /* SIDEBAR */
 aside .sidebar {
-    background: var(--color-white);
+    background: var(--background-2);
     display: flex;
     flex-direction: column;
     height: 86vh;
     position: relative;
     top: 3rem;
+    border-radius: 1rem;
 }
 
 aside h3 {
@@ -191,6 +206,7 @@ aside .sidebar a {
 }
 
 aside .sidebar a span{
+    color: var(--color-dark);
     font-size: 1.6rem;
     transition: all 300ms ease;
 }
@@ -199,6 +215,7 @@ aside .sidebar a:last-child{
     position: absolute;
     bottom: 2rem;
     width: 100%;
+    
 }
 
 aside .sidebar a.active{
@@ -242,23 +259,47 @@ main {
 
 }
 
-main h1 {
+main .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .title > div.search-bar {
+    display: flex;
+    box-shadow: var(--box-shadow-2);
+    background: var(--color-white);
+    border-radius: var(--border-radius-1);
+    
+}
+
+main .title > div.search-bar span {
     color: var(--color-dark);
+}
+
+.search {
+    color: var(--color-dark);
+    background: transparent;
+}
+
+main .title h1 {
+    color: var(--color-dark);
+    display: flex;
 }
 
 main .date {
     display: inline-block;
-    background: var(--color-light);
+    background: var(--color-white);
     border-radius: var(--border-radius-1);
     margin-top: 1rem;
     padding: 0.5rem 1.6rem;
 }
 
 main .date input[type="date"] {
-
     background: transparent;
     color: var(--color-dark);
 }
+
 
 main .insights {
     display: grid;
@@ -424,6 +465,10 @@ main .laptop-list a {
     background: var(--color-background  );
 }
 
+.right .top .profile .profile-photo {
+    box-shadow: var(--box-shadow-2);
+}
+
 .right .top button {
     display: none;
 }
@@ -440,6 +485,7 @@ main .laptop-list a {
 }
 
 .right .theme-toggler span {
+    color: white;
     font-size: 1.2rem;
     width: 50%;
     height: 100%;
@@ -555,10 +601,12 @@ main .laptop-list a {
     font-weight: 600;
 }
 
+
 /* media queries*/
 @media screen and (max-width: 1200px) {
+
     .container{
-        width: 94%;
+        width: 92%;
         grid-template-columns: 7rem auto 23rem;
     }
 
