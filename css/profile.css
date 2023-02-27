@@ -19,6 +19,12 @@
     color: var(--color-dark);
 }
 
+.id a {
+    display: flex;  
+    padding-top: 30px;
+}
+
+
 .id {
     padding-top: 20px;
     padding-left: 260px;
@@ -44,4 +50,6 @@
 }
 
 
-
+table{
+    box-shadow: var(--box-shadow-3);
+}

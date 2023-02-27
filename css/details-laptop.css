@@ -1,28 +1,9 @@
-.details-laptop {
-    margin-bottom: 30px;
-    padding-top: 10px;
-    display: flex;
-}
 
-.details-laptop .foto-laptop img {
-    border-radius: 20px;
-    
-}
-
-.details-laptop .info-laptop {
-    margin-left: 10px;
-    box-shadow: var(--box-shadow-1);
-    background: var(--background-1);
-    padding-left: 10px;
-    padding-right: 8px;
-    border-radius: 10px;
-    color: var(--color-dark);
-}
-
-.details-laptop .foto-laptop {
-    border-radius: 20px;
-    box-shadow: var(--box-shadow-2);
-}
+/* 
+.popup .foto-laptop {
+    border-radius: 9px;
+    box-shadow: var(--box-shadow-3);
+} */
 
 .insights .laptop {
     padding-left: 50px;
@@ -30,18 +11,53 @@
 }
 
 .btn-back {
+    margin-bottom: 10px;
     color: var(--color-dark);
+    background: var(--color-light);
+    border-radius: 50px;
+    width: 110px;
 }
 
-.btn-back a {
-    display: flex;
-    
+.btn-back .btn{
+    padding-top: 10px;
 }
 
-.btn-back a span {
-    width: 20px;
+.btn-back button span {
+    width: 30px;
 }
 
 .date {
     display: flex;
+}
+
+main .insights .progress {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+main .insights svg {
+    width: 7rem;
+    height: 7rem;
+}
+
+main .insights .progress .total {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.btn {
+    background: transparent;
+    color: var(--color-primary);
+    outline: none;
+    cursor: pointer;
 }

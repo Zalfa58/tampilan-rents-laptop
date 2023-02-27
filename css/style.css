@@ -9,6 +9,7 @@
     --color-success: #41f1b6;
     --color-warning: #ffbb55;
     --color-white: #fff;
+    --color-red: #ff0000;
     --color-info-dark: #7d8da1;
     --color-info-light: #dce1eb;
     --color-dark: #383949;
@@ -18,7 +19,9 @@
     --color-background: #e4dede;
     --color-text-muted: #b8bec5;
     --background-1:linear-gradient(228deg, #6b76da 16%, hwb(288 45% 9%) 69%, #6b76da 100%);
-    --background-2: linear-gradient(49deg, #9fa2b8 16%, #7380ec 49%, #9fa2b8 96%);
+    --background-2:linear-gradient(49deg, #9fa2b8 16%, #7380ec 49%, #9fa2b8 96%);
+    --background-3: linear-gradient(49deg,#7380ec 10%, #9fa2b8 96%);
+    --background-4: linear-gradient(153deg, rgba(32,127,129,1) 28%, #ffcd00 96%);
     
 
     --card-border-radius: 2rem;
@@ -32,12 +35,16 @@
     --box-shadow: 0 2rem 3rem var(--color-info-light);
     --box-shadow-1: rgba(134, 170, 190, 0.4) 0px 5px, rgba(134, 170, 190, 0.3) 0px 10px, rgba(134, 170, 190, 0.2) 0px 15px, rgba(134, 170, 190, 0.1) 0px 20px, rgba(134, 170, 190, 0.05) 0px 25px;
     --box-shadow-2: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-    
+    --box-shadow-3: rgba(105, 118, 230, 0.16) 0px 1px 4px, rgb(134, 170, 190) 0px 0px 0px 3px;
+    --box-shadow-left: rgba(134, 170, 190, 0.4) -5px 5px, rgba(134, 170, 190, 0.3) -10px 10px, rgba(134, 170, 190, 0.2) -15px 15px, rgba(134, 170, 190, 0.1) -20px 20px, rgba(134, 170, 190, 0.05) -25px 25px;
+    --box-shadow-right: rgba(134, 170, 190, 0.4) 5px 5px, rgba(134, 170, 190, 0.3) 10px 10px, rgba(134, 170, 190, 0.2) 15px 15px, rgba(134, 170, 190, 0.1) 20px 20px, rgba(134, 170, 190, 0.05) 25px 25px;
 }
 
 .dark-theme-variables {
     --background-1: linear-gradient(228deg, rgba(2,0,36,1) 16%, rgba(109,45,124,1) 69%, rgba(255,175,0,1) 100%);
     --background-2: linear-gradient(49deg, rgba(2,0,36,1) 16%, rgba(45,49,124,1) 49%, rgba(255,205,0,1) 96%);
+    --background-3: linear-gradient(49deg, rgba(45,49,124,1) 10%, rgba(255,205,0,1) 96%);
+    --background-4: linear-gradient(153deg, rgba(255,205,0,1) 28%, rgba(198,11,11,1) 96%);
     --color-background: #181a1e;
     --color-white: #202528;
     --color-dark: #edeffd;
@@ -46,6 +53,7 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
     --box-shadow-1:  rgba(114, 46, 240, 0.4) 0px 5px, rgba(114, 46, 240, 0.3) 0px 10px, rgba(114, 46, 240, 0.2) 0px 15px, rgba(114, 46, 240, 0.1) 0px 20px, rgba(114, 46, 240, 0.05) 0px 25px;
     --box-shadow-2: rgba(255, 255, 255, 0.16) 0px 1px 4px, rgb(255, 255, 255) 0px 0px 0px 3px;
+    --box-shadow-3: rgba(255, 255, 255, 0.16) 0px 1px 4px, rgb(114, 46, 240) 0px 0px 0px 3px;
 }
 
 * {
@@ -71,7 +79,6 @@ body {
     font-size: 0.88rem;
     background: var(--color-background);
     user-select: none;
-    
 }
 
 .container {
@@ -94,6 +101,7 @@ img {
 h1 {
     font-weight: 800;
     font-size: 1.8rem;
+    color: var(--color-dark);
 }
 
 h2 {
@@ -156,7 +164,7 @@ aside {
 }
 
 aside .top {
-    background: var(--color-white);
+    background: var(--background-3);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -191,6 +199,10 @@ aside .sidebar {
 
 aside h3 {
     font-weight: 500;
+}
+
+aside .sidebar h3:hover {  
+    color: var(--color-success);
 }
 
 aside .sidebar a {
@@ -237,11 +249,11 @@ aside .sidebar a.active span{
 }
 
 aside .sidebar a:hover{
-    color: var(--color-primary);
+    color: var(--color-success);
 }
 
 aside .sidebar a:hover span {
-    color: var(--color-primary);
+    color: var(--color-success);
     margin-left: calc(1rem - 3px);
 }
 
@@ -267,7 +279,7 @@ main .title {
 
 main .title > div.search-bar {
     display: flex;
-    box-shadow: var(--box-shadow-2);
+    box-shadow: var(--box-shadow-3);
     background: var(--color-white);
     border-radius: var(--border-radius-1);
     
@@ -293,6 +305,7 @@ main .date {
     border-radius: var(--border-radius-1);
     margin-top: 1rem;
     padding: 0.5rem 1.6rem;
+    box-shadow: var(--box-shadow-3);
 }
 
 main .date input[type="date"] {
@@ -312,11 +325,12 @@ main .insights > div {
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-top: 1rem;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow-3);
+    transition: all 300ms ease;
 }
 
 main .insights > div:hover {
-    box-shadow: none;
+    box-shadow: var(--box-shadow-1);
 }
 
 main .insights > div span{
@@ -357,7 +371,6 @@ main .insights .progress {
     width: 92px;
     height: 92px;
     border-radius: 50%;
-
 }
 
 main .insights svg {
@@ -427,12 +440,12 @@ main .laptop-list table {
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     text-align: center;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow-3);
     transition: all 300ms ease;
 }
 
 main .laptop-list table:hover {
-    box-shadow: none;
+    box-shadow: var(--box-shadow-1);
 }
 
 main table tbody td{
@@ -504,6 +517,7 @@ main .laptop-list a {
     display: flex;
     gap: 2rem;
     text-align: right;
+    background: transparent;
 }
 
 /* Recent Updates */
@@ -550,12 +564,12 @@ main .laptop-list a {
     margin-top: 0.7rem;
     padding: 1.4rem var(--card-padding);
     border-radius: var(--border-radius-3);
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow-3);
     transition: all 300ms ease;
 }
 
 .right .sales-analytics .item:hover {
-    box-shadow: none;
+    
 }
 
 .right .sales-analytics .item .right {
@@ -600,6 +614,37 @@ main .laptop-list a {
 .right .sales-analytics .add-product div h3 {
     font-weight: 600;
 }
+
+.command {
+    /* padding-top: 10px; */
+    display: flex;
+    padding-top: 10px;
+    padding-right: 2px;
+    color: var(--color-dark);
+}
+
+.command .text{
+    border-radius: 5px;
+    display: flex;
+    /* box-shadow: var(--box-shadow-3); */
+}
+
+.command .text .type {
+    color: var(--color-dark);
+    background: transparent;
+    text-decoration: underline solid;
+    font-size: 3.3ch;
+    padding-right: 1px;
+    border-radius: 5px;
+    margin-top: -1px;
+    padding-left: 2px;
+}
+
+.command .text span {
+    /* position: absolute; */
+        
+}
+
 
 
 /* media queries*/
